@@ -1,0 +1,64 @@
+<!-- <p>
+  play works!
+</p> -->
+<!-- <div class="player" (click)="clickKey($event)"></div>
+<div class="player2" (click)="clickKey($event)"></div> -->
+
+<!-- <div class="player" (keydown.a)="enter2($event)"></div> -->
+<!-- <div class="player2" (keydown.a)="enter()"></div> -->
+<!-- <input
+  [ngStyle]="{ left: l + 'px' }"
+  class="player2"
+  (keydown.a)="enter($event)"
+/> -->
+<div class="all">
+  <div class="container" [ngStyle]="{ width: wh + 'px' }">
+    <div *ngFor="let oneField of field; let i = index">
+      <div
+        class="field"
+        [ngStyle]="{ left: oneField[0] + '%', top: oneField[1] + '%' }"
+      ></div>
+    </div>
+    <div
+      [ngStyle]="{ left: horisontalPlayer + '%', top: verticalPlayer + '%' }"
+      class="player"
+    ></div>
+
+    <div *ngFor="let oneWall of wall; let i = index">
+      <div
+        class="wall"
+        [ngStyle]="{ left: oneWall[0] + '%', top: oneWall[1] + '%' }"
+      ></div>
+    </div>
+
+    <div *ngFor="let oneBox of box; let i2 = index">
+      <div
+        class="box"
+        [ngStyle]="{ left: oneBox[0] + '%', top: oneBox[1] + '%' }"
+      ></div>
+    </div>
+  </div>
+
+  <div class="setting" [ngStyle]="{ width: settingWidth + 'px' }">
+    <div [ngStyle]="{ 'text-align': 'center', margin: 10 + 'px' }">
+      {{ game.state }}
+    </div>
+    <div [ngStyle]="{ 'text-align': 'center', margin: 10 + 'px' }">
+      {{ game.time }}
+    </div>
+    <div *ngIf="game.play == false" (click)="gameStart()" class="start">
+      Start
+    </div>
+    <div *ngIf="game.play == true" (click)="gameEnd()" class="end">
+      Ich habe verloren
+    </div>
+  </div>
+</div>
+<!-- [ngStyle]="{ top: verticalPlayer + '%' }" -->
+<!--
+<div *ngFor="let oneField of field; let i3 = index">
+  <div
+    class="field"
+    [ngStyle]="{ left: oneField[0] + '%', top: onefield[1] + '%' }"
+  ></div>
+</div> -->
